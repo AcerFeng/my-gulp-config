@@ -1,0 +1,1 @@
+"use strict";var test="sdfa";console.log(test),console.log(test),console.log(test),console.log(test),console.log(test),console.log(test),console.log(test);var addFn=function(o,t){return o*t};console.log(addFn(23,30));
