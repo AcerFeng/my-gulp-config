@@ -16,7 +16,7 @@ function dev() {
      * HTML处理 
      */
     gulp.task('html:dev', function () {
-        return gulp.src(Config.html.src).pipe(gulp.dest(Config.html.dist)).pipe(reload({
+        return gulp.src(Config.html.src).pipe(reload({
             stream: true
         }));
     });
@@ -24,7 +24,7 @@ function dev() {
      * assets文件夹下的所有文件处理 
      */
     gulp.task('assets:dev', function () {
-        return gulp.src(Config.assets.src).pipe(gulp.dest(Config.assets.dist)).pipe(reload({
+        return gulp.src(Config.assets.src).pipe(reload({
             stream: true
         }));
     });
@@ -32,7 +32,7 @@ function dev() {
      * CSS样式处理 
      */
     gulp.task('css:dev', function () {
-        return gulp.src(Config.css.src).pipe(gulp.dest(Config.css.dist)).pipe(reload({
+        return gulp.src(Config.css.src).pipe(reload({
             stream: true
         }));
     });
@@ -40,7 +40,7 @@ function dev() {
      * SASS样式处理 
      */
     gulp.task('sass:dev', function () {
-        return gulp.src(Config.sass.src).pipe(sass()).pipe(gulp.dest(Config.sass.dist)).pipe(reload({
+        return gulp.src(Config.sass.src).pipe(sass()).pipe(reload({
             stream: true
         }));
     });
@@ -48,7 +48,7 @@ function dev() {
      * js处理 
      */
     gulp.task('js:dev', function () {
-        return gulp.src(Config.js.src).pipe(jshint('.jshintrc')).pipe(jshint.reporter('default')).pipe(gulp.dest(Config.js.dist)).pipe(reload({
+        return gulp.src(Config.js.src).pipe(jshint('.jshintrc')).pipe(jshint.reporter('default')).pipe(reload({
             stream: true
         }));
     });
@@ -60,14 +60,14 @@ function dev() {
             optimizationLevel: 3
             , progressive: true
             , interlaced: true
-        })).pipe(gulp.dest(Config.img.dist)).pipe(reload({
+        })).pipe(reload({
             stream: true
         }));
     });
     gulp.task('dev', ['html:dev', 'css:dev', 'sass:dev', 'js:dev', 'assets:dev', 'images:dev'], function () {
         browserSync.init({
             server: {
-                baseDir: Config.dist
+                baseDir: Config.src
             }
             , notify: false
         });
